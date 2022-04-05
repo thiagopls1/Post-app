@@ -8,7 +8,12 @@ const app = express()
 // Informando ao express que será utilizado o handlebar como template engine:
 // Config
     // Template Engine
-    app.engine('handlebars', engine())
+    app.engine('handlebars', engine({defaultLayout: 'main',
+        runtimeOptions: {
+            allowProtoPropertiesByDefault: true,
+            allowMethodsByDefault: true,
+        }
+    }))
     app.set('view engine', 'handlebars')
     app.set('views', './views')
 
@@ -20,7 +25,9 @@ const app = express()
 // Rotas
 
 app.get('/', (req, res) => {
-    res.render('home')
+    post.findAll().then((posts) => {
+        res.render('home', {posts: posts})
+    })
 })
 
 app.get('/cadastro', (req, res) => {
