@@ -15,6 +15,7 @@ const app = express()
 // Body-Parser
     app.use(bodyParser.urlencoded({extended: false}))
     app.use(bodyParser.json())
+    // Permite apenas que seja utilizados métodos iguais (Get, Post) e envia eles em um .json
     
 // Rotas
 
