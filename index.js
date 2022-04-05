@@ -25,7 +25,7 @@ const app = express()
 // Rotas
 
 app.get('/', (req, res) => {
-    post.findAll().then((posts) => {
+    post.findAll({ order: [['id', 'DESC']]}).then((posts) => {
         res.render('home', {posts: posts})
     })
 })
@@ -46,6 +46,14 @@ app.post('/sucesso', (req, res) => {
         res.send(`Deu ruim alguma coisa aí =( : ${erro}`)
     })
 
+})
+
+app.get('/deletar/:id', (req, res) => {
+    post.destroy({where: { 'id': req.params.id}}).then( () => {
+        res.send('Postagem deletada com sucesso')
+    }).catch((erro) => {
+        res.send(`Erro ao deletar: ${erro}`)
+    })
 })
 
 app.listen(3000, () => {
