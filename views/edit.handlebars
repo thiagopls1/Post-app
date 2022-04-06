@@ -1,0 +1,12 @@
+{{#each id}}
+<form action="/sucesso-editar/{{id}}" method="POST">
+
+    <p>Título: </p>
+    <input value="{{titulo}}" type="text" name="titulo">
+
+    <p>Conteúdo: </p>
+    <textarea value="{{conteudo}}" name="conteudo"></textarea>
+
+    <button type="submit">Salvar alterações</button>
+</form>
+{{/each}}
