@@ -35,7 +35,7 @@ app.get('/cadastro', (req, res) => {
 })
 
 app.get('/editar/:id', (req, res) => {
-    post.findAll({ where:{ 'id': req.params.id }, order: [['id', 'DESC']]}).then( (id) => {
+    post.findAll({ where:{ 'id': req.params.id }, order: [['id']]}).then( (id) => {
         res.render("edit", {'id': id})
     }).catch( (erro) => {
         res.send(`Deu ruim ${erro}`)
