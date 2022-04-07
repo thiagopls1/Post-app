@@ -48,13 +48,12 @@ app.get('/editar/:id', (req, res) => {
 })
 
 app.get('/deletar/:id', (req, res) => {
-    post.destroy({where: { 'id': req.params.id}}).then( () => {
-        res.send('Postagem deletada com sucesso')
-    }).catch((erro) => {
-        res.send(`Erro ao deletar: ${erro}`)
+    post.findAll({ where:{ 'id': req.params.id }}).then( (id) => {
+        res.render("delete", {'id': id})
+    }).catch( (erro) => {
+        res.send(`Deu ruim ${erro}`)
     })
 })
-
 // Formulários com o metodo post só podem passar os dados para essa rota assim:
 app.post('/sucesso-cadastro', (req, res) => {
 
@@ -67,6 +66,14 @@ app.post('/sucesso-cadastro', (req, res) => {
         res.send(`Deu ruim alguma coisa aí =( : ${erro}`)
     })
 
+})
+
+app.post('/sucesso-deletar/:id', (req, res) => {
+    post.destroy({where: { 'id': req.params.id}}).then( () => {
+        res.redirect("/")
+    }).catch((erro) => {
+        res.send(`Erro ao deletar: ${erro}`)
+    })
 })
 
 app.post('/sucesso-editar/:id', (req, res) => {
