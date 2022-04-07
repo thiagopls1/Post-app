@@ -1,0 +1,134 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background-color: #ffc0cb;
+}
+
+header{
+    background-color: #d1959f;
+    width: 100%;
+    padding: 10px 20px;
+    box-sizing: border-box;
+}
+
+header > a{
+    float: right;
+    margin-top: 15px;
+    color: #000000;
+    border: solid 10px #d1959f;
+    transition: 0.5s all;
+}
+
+header > h2 > a{
+    color: #000000;
+    text-decoration: none;
+    transition: 0.8s all;
+}
+
+header > h2 > a:hover{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+header > a:hover{
+    color: #414141;
+    background-color: #e4a1ab;
+    border-radius: 10px;
+    border: solid 10px #e4a1ab
+}
+
+.bodyContainer{
+    background-color: #ffc0cb;
+    margin: 0;
+}
+
+.bodyContainer > h1{
+    margin-left: 15px;
+}
+
+.formContainer{
+    text-align: center;
+    display: block;
+}
+
+form{
+    text-align: center;
+    border: solid 1px #8f8f8f;
+    box-shadow: 3px 1px #c2929a;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 40px 175px;
+    display: inline-block;
+    background-color: #FFFFFF;
+}
+
+form > input[type=text]{
+    padding: 5px 5px;
+    border: solid 1px #1a1a1a;
+    border-radius: 10px;
+}
+
+form > textarea{
+    resize: none;
+    width: 250px;
+    height: 150px;
+    padding: 5px;
+    border: solid 1px #1a1a1a;
+    border-radius: 10px;
+}
+
+form > p > button{
+    width: 120px;
+    height: 70px;
+}
+
+.formTitle{
+    text-align: center;
+}
+
+.postBox{
+    border: solid 1px #8f8f8f;
+    box-shadow: 3px 1px #c2929a;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 25px;
+    background-color: #FFFFFF;
+    display: inline-block;
+    min-width: 27.5%;
+    max-width: 27.5%;
+    min-height: 240px;
+    overflow-y: auto;
+    
+}
+
+.postBox > p{
+    min-height: 125px;
+    max-height: 125px;
+    overflow: auto;
+    padding: 10px;
+    border: solid 1px #b1b1b1;
+    border-radius: 5px;
+}
+
+.postBox > button{
+    width: 100px;
+    height: 35px;
+}
+
+.bodyContainer > #postList{
+    display: grid;
+}
+
+.postBox > ::-webkit-scrollbar{
+    width: 6px;
+}
+
+.postBox > ::-webkit-scrollbar-track {
+    background: #ffffff; 
+    border-radius: 6px;
+}
+
+.postBox > ::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background: #b1b1b1; 
+}

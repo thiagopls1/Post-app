@@ -1,0 +1,26 @@
+<header>
+    <a href="/cadastro" class="menuItem">+ Criar Post</a>
+    <h2><a href="/">postApp</a></h2>
+</header>
+
+<div class="bodyContainer">
+
+<div class="formContainer">
+<h1 class="formTitle">Editar Postagem:</h1>
+
+{{#each id}}
+<form action="/sucesso-editar/{{id}}" method="POST">
+
+    <p>Título: </p>
+    <input value="{{titulo}}" type="text" name="titulo">
+
+    <p>Conteúdo: </p>
+    <textarea name="conteudo">{{conteudo}}</textarea>
+
+    <p>
+        <button type="submit">Salvar alterações</button>
+        <button type="button" onclick="window.location.href='/'">Cancelar ação</button>
+    </p>
+</form>
+{{/each}}
+</div>
