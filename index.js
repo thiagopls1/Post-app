@@ -2,9 +2,13 @@ import express from 'express'
 import { engine }  from 'express-handlebars'
 import bodyParser from 'body-parser'
 import post from './models/db/tables.js'
+import { dirname } from 'path'
+import { fileURLToPath } from 'url'
 
 const app = express()
+const _dirname = dirname(fileURLToPath(import.meta.url))
 
+app.use(express.static('./public'))
 // Informando ao express que será utilizado o handlebar como template engine:
 // Config
     // Template Engine
@@ -16,6 +20,7 @@ const app = express()
     }))
     app.set('view engine', 'handlebars')
     app.set('views', './views')
+    
 
 // Body-Parser
     app.use(bodyParser.urlencoded({extended: false}))
@@ -35,7 +40,7 @@ app.get('/cadastro', (req, res) => {
 })
 
 app.get('/editar/:id', (req, res) => {
-    post.findAll({ where:{ 'id': req.params.id }, order: [['id']]}).then( (id) => {
+    post.findAll({ where:{ 'id': req.params.id }}).then( (id) => {
         res.render("edit", {'id': id})
     }).catch( (erro) => {
         res.send(`Deu ruim ${erro}`)

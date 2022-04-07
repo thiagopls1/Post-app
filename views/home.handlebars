@@ -1,14 +1,21 @@
+<header>
+    <a href="/cadastro" class="menuItem">+ Criar Post</a>
+    <h2><a href="/">postApp</a></h2>
+</header>
+
+<div class="bodyContainer">
 <h1>Lista dos posts:</h1>
 
 {{#each posts}}
 
-    <small>{{createdAt}}</small>
-    <h2>{{titulo}}</h2>
-    <p>{{conteudo}}</p>
+    <div class="postBox">
+        <small>{{createdAt}}</small>
+        <h2>{{titulo}}</h2>
+        <p>{{conteudo}}</p>
 
-    <a href="/deletar/{{id}}"><button>Deletar</button></a>
-    <a href="/editar/{{id}}"><button>Editar</button></a>
-
-    <hr>
+        <button onclick="window.location.href='/deletar/{{id}}'">Deletar</button>
+        <button onclick="window.location.href='/editar/{{id}}'">Editar</button>
+    </div>
 
 {{/each}}
+</div>

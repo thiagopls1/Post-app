@@ -1,11 +1,24 @@
-<form action="/sucesso-cadastro" method="POST">
+<header>
+    <a href="/cadastro" class="menuItem">+ Criar Post</a>
+    <h2><a href="/">postApp</a></h2>
+</header>
 
-    <p>Título: </p>
-    <input type="text" name="titulo">
+<div class="bodyContainer">
 
-    <p>Conteúdo: </p>
-    <textarea name="conteudo"></textarea>
+<div class="formContainer">
+    <h1 class="formTitle">Adicionar Postagem:</h1>
 
-    <button type="submit">Cadastrar postagem</button>
+    <form action="/sucesso-cadastro" method="POST">
 
-</form>
+        <p>Título: </p>
+        <input type="text" name="titulo">
+
+        <p>Conteúdo: </p>
+        <textarea name="conteudo"></textarea>
+
+        <p>
+            <button type="submit">Salvar postagem</button>
+            <button onclick="window.location.href='/'">Cancelar ação</button>
+        </p>
+    </form>
+</div>
