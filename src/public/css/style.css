@@ -1,11 +1,13 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
-    background-color: #ffc0cb;
+    background-image: url('../img/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 header{
-    background-color: #d1959f;
+    background-color: #75b3dd;
     width: 100%;
     padding: 10px 20px;
     box-sizing: border-box;
@@ -14,35 +16,32 @@ header{
 header > a{
     float: right;
     margin-top: 15px;
-    color: #000000;
-    border: solid 10px #d1959f;
+    color: #ffffff;
+    border: solid 10px #75b3dd;
+    border-radius: 10px;
     transition: 0.5s all;
 }
 
 header > h2 > a{
-    color: #000000;
+    color: #FFFFFF;
     text-decoration: none;
     transition: 0.8s all;
 }
 
 header > h2 > a:hover{
-    color: #FFFFFF;
+    color: #000000;
     text-decoration: none;
 }
 
 header > a:hover{
     color: #414141;
-    background-color: #e4a1ab;
+    background-color: #a1c4e4;
     border-radius: 10px;
-    border: solid 10px #e4a1ab
-}
-
-.bodyContainer{
-    background-color: #ffc0cb;
-    margin: 0;
+    border: solid 10px #a1c4e4
 }
 
 .bodyContainer > h1{
+    color: #ffffff;
     margin-left: 15px;
 }
 
@@ -54,7 +53,7 @@ header > a:hover{
 form{
     text-align: center;
     border: solid 1px #8f8f8f;
-    box-shadow: 3px 1px #c2929a;
+    box-shadow: 3px 1px #6f98b9;
     border-radius: 10px;
     width: fit-content;
     padding: 40px 175px;
@@ -74,7 +73,7 @@ form > textarea{
     height: 150px;
     padding: 5px;
     border: solid 1px #1a1a1a;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 form > p > button{
@@ -83,12 +82,13 @@ form > p > button{
 }
 
 .formTitle{
+    color: #ffffff;
     text-align: center;
 }
 
 .postBox{
     border: solid 1px #8f8f8f;
-    box-shadow: 3px 1px #c2929a;
+    box-shadow: 3px 1px #6f98b9;
     border-radius: 10px;
     margin: 10px;
     padding: 25px;
@@ -129,6 +129,20 @@ form > p > button{
 }
 
 .postBox > ::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background: #b1b1b1; 
+}
+
+form > ::-webkit-scrollbar{
+    width: 6px;
+}
+
+form > ::-webkit-scrollbar-track {
+    background: #ffffff; 
+    border-radius: 6px;
+}
+
+form > ::-webkit-scrollbar-thumb {
     border-radius: 6px;
     background: #b1b1b1; 
 }
