@@ -3,13 +3,13 @@ import post from './database/tables.js'
 
 const service = {
 
-     renderAllPosts(req, res){
+    renderAllPosts(req, res){
         post.findAll({ order: [['id', 'DESC']]}).then((posts) => {
             res.render('home', {posts: posts})
         })
     },
 
-     renderUpdatePost(req, res){
+    renderUpdatePost(req, res){
         post.findAll({ where:{ 'id': req.params.id }}).then( (id) => {
             res.render("edit", {'id': id})
         }).catch( (erro) => {
@@ -17,7 +17,7 @@ const service = {
         })
     },
 
-     renderDeletePost(req, res){
+    renderDeletePost(req, res){
         post.findAll({ where:{ 'id': req.params.id }}).then( (id) => {
             res.render("delete", {'id': id})
         }).catch( (erro) => {
@@ -25,7 +25,7 @@ const service = {
         })
     },
 
-     createPost(req, res){
+    createPost(req, res){
 
         post.create({
             titulo: req.body.titulo,
@@ -38,7 +38,7 @@ const service = {
 
     },
 
-     deletePost(req, res){
+    deletePost(req, res){
 
         post.destroy({where: { 'id': req.params.id}}).then( () => {
             res.redirect("/")
@@ -48,7 +48,7 @@ const service = {
 
     },
 
-     updatePost(req, res){
+    updatePost(req, res){
 
         post.update(
             {
@@ -64,6 +64,6 @@ const service = {
     }
     
 }
-   
+
 
 export default service
