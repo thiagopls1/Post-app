@@ -5,6 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "npm build",
     "test": "node index.js",
     "live-reload": "nodemon index.js"
   },
